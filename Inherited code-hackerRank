@@ -1,0 +1,16 @@
+
+class BadLengthException : public exception {
+private:
+    int length;
+
+public:
+    BadLengthException(int len) {
+        length=len;
+    }
+
+    const char* what() const noexcept override {
+        stringstream ss;
+        ss<<"Too short:"<<length;
+      return ss.str();
+      
+    }
