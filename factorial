@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int factorial(int n){
+int fact=0;
+for (int i=0; i<n;i++){
+
+fact=fact*i;
+}
+return fact;
+}
+int main(){
+int a;
+cin>>a;
+
+cout<<"Factorial of "<<a<< "is"<<factorial(a)<<endl;
+return 0;
+}
