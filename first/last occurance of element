@@ -1,0 +1,58 @@
+int firstOccurence(vector<int>& arr,int n, int key){
+int s=0;
+int e=n-1;
+int ans=-1;
+
+int mid=s + (e-s)/2;
+while(s<=e){
+
+    if(key==arr[mid]){
+        ans=mid;
+        e=mid-1;
+    }
+    if(arr[mid] >key){
+e=mid-1;
+    }
+    if(arr[mid] <key){
+s=mid+1;
+    }
+mid=s + (e-s)/2;
+
+}
+return ans;
+
+}
+int lastOccurence(vector<int>& arr,int n, int key){
+int s=0;
+int e=n-1;
+int ans=-1;
+
+int mid=s + (e-s)/2;
+while(s<=e){
+
+    if(key==arr[mid]){
+        ans=mid;
+        s=mid+1;
+    }
+ if(arr[mid] >key){
+e=mid-1;
+    }
+    if(arr[mid] <key){
+s=mid+1;
+    }
+mid=s + (e-s)/2;
+
+}
+return ans;
+
+}
+
+pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
+{
+
+    pair<int, int> p;
+    p.first= firstOccurence(arr, n, k);
+     p.second= lastOccurence(arr, n, k);
+     return p;
+    // Write your code here
+}
